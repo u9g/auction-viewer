@@ -5,9 +5,10 @@ type Data = {
   name: string
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  const f = await (await fetch('http://localhost:3005/items?q=' + encodeURIComponent(req.query.q as any))).json()
+  res.status(200).json(f)
 }
