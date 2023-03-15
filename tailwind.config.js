@@ -5,6 +5,10 @@ module.exports = {
     './src/pages/**/*.*'
   ],
   theme: {
+    minWidth: {
+      '2/5': '40%',
+      '1/4': '25%'
+    },
     extend: {},
   },
   plugins: [],
